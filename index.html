@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REGAC — Regulatory Compliance Intensive | RN Collins LLC</title>
+
+  <!-- Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #F6F3EC;
+      --text: #1C1B1F;
+      --brand: #6B2937;
+      --brand-dark: #511f2a;
+      --brand-light: #8a3446;
+      --gold: #B8842A;
+      --gold-dark: #9a6d21;
+      --off-white: #FAF8F4;
+      --muted: #6B6560;
+      --border: #DDD8CE;
+      --card-bg: #FFFFFF;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-ui: 'Syne', sans-serif;
+      --font-body: 'Manrope', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+      --radius: 4px;
+      --radius-lg: 12px;
+      --shadow: 0 2px 16px rgba(28,27,31,0.08);
+      --shadow-lg: 0 8px 40px rgba(28,27,31,0.14);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+    h2, h3, h4 {
+      font-family: var(--font-ui);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+    p { line-height: 1.8; }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .container--narrow {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: 96px 0; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-ui);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .btn:active { transform: translateY(1px); }
+
+    .btn--primary {
+      background: var(--brand);
+      color: #fff;
+    }
+    .btn--primary:hover { background: var(--brand-dark); box-shadow: 0 4px 20px rgba(107,41,55,0.35); }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--brand);
+      border: 1.5px solid var(--brand);
+    }
+    .btn--outline:hover { background: var(--brand); color: #fff; }
+
+    .btn--ghost {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.5);
+    }
+    .btn--ghost:hover { background: rgba(255,255,255,0.1); }
+
+    .btn--gold {
+      background: var(--gold);
+      color: #fff;
+    }
+    .btn--gold:hover { background: var(--gold-dark); box-shadow: 0 4px 20px rgba(184,132,42,0.35); }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(246,243,236,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav__logo {
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brand);
+      text-decoration: none;
+    }
+    .nav__cta { font-size: 13px; padding: 10px 22px; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--brand);
+      color: #FAF8F4;
+      padding: 120px 0 100px;
+    }
+    .hero__eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(250,248,244,0.55);
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      color: #FAF8F4;
+      max-width: 840px;
+      margin-bottom: 32px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: #e8c07e;
+    }
+    .hero__sub {
+      font-family: var(--font-ui);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: rgba(250,248,244,0.72);
+      margin-bottom: 48px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+    .hero__sub span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero__sub span::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #e8c07e;
+    }
+    .hero__sub span:first-child::before { display: none; }
+    .hero__actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .hero__urgency {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #e8c07e;
+      border: 1px solid rgba(232,192,126,0.4);
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    /* ── PAIN SECTION ── */
+    .pain {
+      background: var(--off-white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .pain h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--brand);
+      margin-bottom: 32px;
+    }
+    .pain p { color: var(--text); font-size: 17px; }
+    .pain__ticker {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .ticker-pill {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--brand);
+      padding: 8px 16px;
+      color: var(--muted);
+    }
+
+    /* ── PROMISE SECTION ── */
+    .promise {
+      background: var(--bg);
+    }
+    .promise h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      margin-bottom: 24px;
+    }
+    .promise p { font-size: 17px; color: var(--muted); }
+    .promise__stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 32px 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--brand);
+    }
+    .stat-card__number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 600;
+      color: var(--brand);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-card__label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── DELIVERABLES ── */
+    .deliverables { background: var(--brand); color: #FAF8F4; }
+    .deliverables h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: #FAF8F4;
+      margin-bottom: 56px;
+    }
+    .deliverables__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .deliv-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 32px;
+      border-radius: var(--radius-lg);
+      transition: background 0.2s;
+    }
+    .deliv-card:hover { background: rgba(255,255,255,0.11); }
+    .deliv-card__icon {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #e8c07e;
+      margin-bottom: 16px;
+    }
+    .deliv-card h3 {
+      font-size: 16px;
+      color: #FAF8F4;
+      margin-bottom: 12px;
+      font-family: var(--font-ui);
+    }
+    .deliv-card p {
+      font-size: 14px;
+      color: rgba(250,248,244,0.65);
+      line-height: 1.6;
+    }
+
+    /* ── FORMAT BANNER ── */
+    .format-banner {
+      background: var(--off-white);
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .format-banner__inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .format-item {
+      flex: 1;
+      min-width: 200px;
+    }
+    .format-item__label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 6px;
+    }
+    .format-item__value {
+      font-family: var(--font-ui);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* ── PRICING ── */
+    .pricing { background: var(--bg); }
+    .pricing h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 16px;
+    }
+    .pricing__sub {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 56px;
+    }
+    .pricing__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+    .price-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 40px 32px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+      position: relative;
+    }
+    .price-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .price-card--featured {
+      border-color: var(--brand);
+      border-width: 2px;
+    }
+    .price-card__badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--brand);
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .price-card__tier {
+      font-family: var(--font-ui);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .price-card__price {
+      font-family: var(--font-mono);
+      font-size: 2.6rem;
+      font-weight: 500;
+      color: var(--brand);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .price-card__note {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .price-card__features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+    .price-card__features li {
+      font-size: 14px;
+      color: var(--muted);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .price-card__features li::before {
+      content: '→';
+      color: var(--brand);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .price-card .btn { width: 100%; justify-content: center; }
+
+    /* ── PULL QUOTE ── */
+    .pullquote { background: var(--off-white); border-top: 1px solid var(--border); }
+    .pullquote blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--text);
+      border-left: 3px solid var(--brand);
+      padding-left: 32px;
+      margin-bottom: 24px;
+    }
+    .pullquote__attr {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brand);
+      padding-left: 35px;
+    }
+
+    /* ── ABOUT ── */
+    .about { background: var(--bg); }
+    .about__inner {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about__left {}
+    .about__avatar-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.05em;
+    }
+    .about h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      margin-bottom: 8px;
+    }
+    .about__credentials {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--brand);
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+    .about p { font-size: 16px; color: var(--muted); }
+
+    /* ── EMAIL CAPTURE ── */
+    .email-capture { background: var(--brand); color: #FAF8F4; text-align: center; }
+    .email-capture h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: #FAF8F4;
+      margin-bottom: 12px;
+    }
+    .email-capture__sub {
+      font-size: 16px;
+      color: rgba(250,248,244,0.75);
+      margin-bottom: 48px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .capture-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .capture-form input {
+      flex: 1;
+      min-width: 200px;
+      padding: 14px 18px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.1);
+      color: #FAF8F4;
+      font-family: var(--font-body);
+      font-size: 15px;
+      border-radius: var(--radius);
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .capture-form input::placeholder { color: rgba(250,248,244,0.45); }
+    .capture-form input:focus {
+      border-color: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.14);
+    }
+    .capture-form .btn {
+      background: #FAF8F4;
+      color: var(--brand);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .capture-form .btn:hover { background: #fff; }
+    .success-msg {
+      display: none;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      color: #e8c07e;
+      margin-top: 20px;
+      padding: 12px 20px;
+      border: 1px solid rgba(232,192,126,0.4);
+      border-radius: var(--radius);
+      background: rgba(232,192,126,0.08);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #131114;
+      color: rgba(250,248,244,0.45);
+      text-align: center;
+      padding: 40px 24px;
+    }
+    footer p {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+    }
+    footer a { color: rgba(250,248,244,0.55); text-decoration: none; }
+    footer a:hover { color: #FAF8F4; }
+
+    /* ── FIXED CONTACT BUTTON ── */
+    .contact-fab {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 200;
+      background: var(--gold);
+      color: #fff;
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 14px 24px;
+      border-radius: 40px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 24px rgba(184,132,42,0.4);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .contact-fab:hover {
+      background: var(--gold-dark);
+      box-shadow: 0 6px 32px rgba(184,132,42,0.5);
+      transform: translateY(-2px);
+    }
+    .contact-fab svg { width: 16px; height: 16px; }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      background: rgba(28,27,31,0.55);
+      backdrop-filter: blur(6px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.is-open { display: flex; }
+
+    .modal {
+      background: var(--off-white);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(28,27,31,0.25);
+      animation: modalIn 0.22s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(16px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .modal__close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.15s, color 0.15s;
+    }
+    .modal__close:hover { background: var(--border); color: var(--text); }
+    .modal__eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 10px;
+    }
+    .modal h2 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    .modal__sub {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .modal__urgency {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      background: rgba(107,41,55,0.07);
+      border: 1px solid rgba(107,41,55,0.2);
+      color: var(--brand);
+      padding: 8px 14px;
+      border-radius: var(--radius);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    /* Form styles */
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .form-group label span { color: var(--muted); font-weight: 400; }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--text);
+      border-radius: var(--radius);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--brand); }
+    .form-group textarea { min-height: 100px; resize: vertical; }
+    .modal .btn { width: 100%; justify-content: center; margin-top: 4px; }
+
+    .modal__success {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .modal__success__icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    .modal__success h3 {
+      font-family: var(--font-ui);
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    .modal__success p { font-size: 14px; color: var(--muted); }
+
+    .modal__error {
+      display: none;
+      font-size: 13px;
+      color: #c0392b;
+      margin-top: 8px;
+      padding: 8px 12px;
+      background: #fdf0ef;
+      border: 1px solid #f5c6c3;
+      border-radius: var(--radius);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      section { padding: 72px 0; }
+      .hero { padding: 80px 0 72px; }
+      .about__inner { grid-template-columns: 1fr; gap: 40px; }
+      .about__avatar-placeholder { aspect-ratio: 3/2; max-height: 280px; }
+      .modal { padding: 36px 24px; }
+      .contact-fab { bottom: 20px; right: 20px; }
+      .nav__logo { font-size: 11px; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.85rem; }
+      .pricing__grid { grid-template-columns: 1fr; }
+      .deliverables__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="#" class="nav__logo">REGAC · RN Collins LLC</a>
+    <button class="btn btn--primary nav__cta" onclick="openEnrollModal()">Reserve My Seat</button>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="container">
+    <p class="hero__eyebrow">Regulatory Compliance Intensive — Cohort 1</p>
+    <h1>The Only Regulatory Compliance Intensive Built by Someone Who <em>Actually Clerks</em> in Cannabis and Psychedelics Law — 4 Weeks, 216 Templates, CLE Credit Pending</h1>
+    <div class="hero__sub">
+      <span>4 weeks</span>
+      <span>216 attorney-grade templates</span>
+      <span>CLE credit pending</span>
+      <span>Cohort capped at 20</span>
+    </div>
+    <div class="hero__actions">
+      <button class="btn btn--ghost" style="background:rgba(250,248,244,0.95);color:var(--brand);border:none;font-size:14px;" onclick="openEnrollModal()">Reserve My Seat</button>
+      <span class="hero__urgency">⚑ Cohort capped at 20 seats</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── PAIN / PROBLEM ── -->
+<section class="pain">
+  <div class="container--narrow">
+    <h2>The Rules Changed Again. Your Clients Are Calling.</h2>
+    <div class="pain__ticker">
+      <div class="ticker-pill">DEA psilocybin scheduling shifted</div>
+      <div class="ticker-pill">Oregon Measure 110 collapsed</div>
+      <div class="ticker-pill">Colorado NMD rules revised</div>
+      <div class="ticker-pill">Federal/state conflicts widening</div>
+    </div>
+    <p>The DEA changed its psilocybin scheduling guidance. Oregon's Measure 110 collapsed. Colorado's NMD rules shifted again. And your clients are calling.</p>
+    <br />
+    <p>Most CLE courses on emerging therapeutics are written by academics who've never seen a license application. The regulatory landscape for cannabis, psychedelics, and emerging therapeutics changes faster than any practitioner can keep up with. State laws conflict with federal frameworks, DEA scheduling moves happen mid-year, and firms that miss a compliance window face license revocations, failed fundraises, or malpractice exposure.</p>
+  </div>
+</section>
+
+<!-- ── PROMISE ── -->
+<section class="promise">
+  <div class="container--narrow">
+    <h2>4 Weeks. A Complete Regulatory Compliance Toolkit.</h2>
+    <p>In 4 weeks you will have a complete regulatory compliance toolkit, earn CLE credit, and understand exactly how to advise clients — or run your own operation — in the most volatile drug-policy environment in US history, built on 216 attorney-grade templates from someone who clerks in this space daily.</p>
+  </div>
+  <div class="container">
+    <div class="promise__stat-row">
+      <div class="stat-card">
+        <div class="stat-card__number">216</div>
+        <div class="stat-card__label">Attorney-grade templates</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__number">4</div>
+        <div class="stat-card__label">Live weekly sessions</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__number">90<span style="font-size:1.5rem">min</span></div>
+        <div class="stat-card__label">Per live session</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__number">20</div>
+        <div class="stat-card__label">Max cohort seats</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DELIVERABLES ── -->
+<section class="deliverables">
+  <div class="container">
+    <h2>What You Get</h2>
+    <div class="deliverables__grid">
+      <div class="deliv-card">
+        <div class="deliv-card__icon">01 · Live Sessions</div>
+        <h3>4 Live Weekly Sessions (90 min each)</h3>
+        <p>State Licensing Frameworks → DEA Scheduling &amp; Federal Overlay → Operator Compliance Templates → Emerging Issues (psilocybin, ketamine, MDMA). Tuesdays 12–1:30pm ET.</p>
+      </div>
+      <div class="deliv-card">
+        <div class="deliv-card__icon">02 · Template Library</div>
+        <h3>Digital Template Library</h3>
+        <p>The top 20% of the 216-template Clerking library, curated for regulatory compliance. Attorney-grade, ready to adapt and deploy.</p>
+      </div>
+      <div class="deliv-card">
+        <div class="deliv-card__icon">03 · NotebookLM</div>
+        <h3>NotebookLM Knowledge Pack</h3>
+        <p>One curated NotebookLM knowledge pack per session, grounded in primary sources — statutes, rules, guidance, and case documents.</p>
+      </div>
+      <div class="deliv-card">
+        <div class="deliv-card__icon">04 · Certificate</div>
+        <h3>Certificate of Completion</h3>
+        <p>Non-accredited certificate for v1 cohort. Bar CLE accreditation application in progress for v2. Founding cohort members credited.</p>
+      </div>
+      <div class="deliv-card">
+        <div class="deliv-card__icon">05 · Recordings</div>
+        <h3>Session Recordings + PDF Summaries</h3>
+        <p>All sessions recorded. PDF summary distributed after each session. Lifetime access to recordings for enrolled cohort members.</p>
+      </div>
+      <div class="deliv-card">
+        <div class="deliv-card__icon">06 · Format</div>
+        <h3>Live Zoom Cohort + Async + Notion Hub</h3>
+        <p>Live cohort capped at 20. Async recordings for flexibility. Notion resource hub with all materials organized by session and topic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FORMAT BANNER ── -->
+<div class="format-banner">
+  <div class="container format-banner__inner">
+    <div class="format-item">
+      <div class="format-item__label">Format</div>
+      <div class="format-item__value">Live Zoom + Async</div>
+    </div>
+    <div class="format-item">
+      <div class="format-item__label">Schedule</div>
+      <div class="format-item__value">Tuesdays 12–1:30pm ET</div>
+    </div>
+    <div class="format-item">
+      <div class="format-item__label">Duration</div>
+      <div class="format-item__value">4 weeks · 6 hrs live</div>
+    </div>
+    <div class="format-item">
+      <div class="format-item__label">Cohort size</div>
+      <div class="format-item__value">Maximum 20 seats</div>
+    </div>
+    <div class="format-item">
+      <div class="format-item__label">CLE</div>
+      <div class="format-item__value">Credit Pending (v2)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PRICING ── -->
+<section class="pricing">
+  <div class="container">
+    <h2>Reserve Your Seat</h2>
+    <p class="pricing__sub">All tiers include full template library, session recordings, NotebookLM packs &amp; certificate</p>
+    <div class="pricing__grid">
+      <div class="price-card">
+        <div class="price-card__tier">Individual Seat</div>
+        <div class="price-card__price">$497</div>
+        <div class="price-card__note">Non-accredited · $697 when CLE-accredited</div>
+        <ul class="price-card__features">
+          <li>1 live seat (Tuesdays 12–1:30pm ET)</li>
+          <li>Full 216-template library access</li>
+          <li>4 NotebookLM knowledge packs</li>
+          <li>Session recordings + PDF summaries</li>
+          <li>Certificate of completion</li>
+          <li>Notion resource hub access</li>
+        </ul>
+        <button class="btn btn--primary" onclick="openEnrollModal()">Reserve My Seat</button>
+      </div>
+      <div class="price-card price-card--featured">
+        <div class="price-card__badge">Best for teams</div>
+        <div class="price-card__tier">Firm License</div>
+        <div class="price-card__price">$1,997</div>
+        <div class="price-card__note">5 seats · $399/seat</div>
+        <ul class="price-card__features">
+          <li>5 live seats for your team</li>
+          <li>Full 216-template library access</li>
+          <li>4 NotebookLM knowledge packs</li>
+          <li>Session recordings + PDF summaries</li>
+          <li>5 certificates of completion</li>
+          <li>Notion resource hub access</li>
+        </ul>
+        <button class="btn btn--primary" onclick="openEnrollModal()">Reserve Firm Seats</button>
+      </div>
+      <div class="price-card">
+        <div class="price-card__tier">Institutional License</div>
+        <div class="price-card__price">$4,997</div>
+        <div class="price-card__note">Unlimited seats · Organization-wide</div>
+        <ul class="price-card__features">
+          <li>Unlimited seats for your organization</li>
+          <li>Full 216-template library access</li>
+          <li>4 NotebookLM knowledge packs</li>
+          <li>Session recordings + PDF summaries</li>
+          <li>Certificates for all attendees</li>
+          <li>Priority Q&amp;A access + onboarding call</li>
+        </ul>
+        <button class="btn btn--outline" onclick="openEnrollModal()">Reserve Institutional Access</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PULL QUOTE / ABOUT THE OFFER ── -->
+<section class="pullquote">
+  <div class="container--narrow">
+    <blockquote>
+      "This one is built from 216 templates I've written, filed, and used in active clerkships at firms handling cannabis, psychedelic, and emerging-drug matters across multiple states. In 4 weeks you'll master the regulatory frameworks that matter right now — not a 2022 overview, not a general survey. You'll leave with a working toolkit of attorney-grade compliance templates, a NotebookLM knowledge pack grounded in primary sources, and a certificate of completion (Bar CLE accreditation application in progress). This cohort is capped at 20. I run a live Q&amp;A in every session. You will know how to advise your clients in this space when we're done."
+    </blockquote>
+    <p class="pullquote__attr">— Rayven-Nikkita Collins, Founder · RN Collins LLC</p>
+    <div style="margin-top:40px;text-align:center;">
+      <button class="btn btn--primary" style="font-size:15px;padding:16px 40px;" onclick="openEnrollModal()">Reserve My Seat — Cohort Capped at 20</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about">
+  <div class="container">
+    <div class="about__inner">
+      <div class="about__left">
+        <div class="about__avatar-placeholder">RNC</div>
+      </div>
+      <div class="about__right">
+        <h2>Rayven-Nikkita Collins</h2>
+        <div class="about__credentials">
+          Neuroscientist (MS, Anatomy &amp; Neurobiology, Boston University)<br />
+          JD Candidate, Northeastern University School of Law<br />
+          Founder, RN Collins LLC
+        </div>
+        <p>Rayven-Nikkita Collins works at the intersection of neuroscience, law, and emerging drug policy. She clerks at firms handling active cannabis, psychedelic, and emerging-drug matters across multiple states — which means every template in this course has been written, filed, or stress-tested in the real regulatory environment your clients are operating in today.</p>
+        <br />
+        <p>REGAC is the course she wished existed when she started tracking these frameworks. It's built for practitioners who need to advise clients now — not in a theoretical future where the rules have settled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EMAIL CAPTURE ── -->
+<section class="email-capture">
+  <div class="container">
+    <h2>Get the Free Regulatory Landscape Map</h2>
+    <p class="email-capture__sub">Drop your email for the state-by-state overview of cannabis and psychedelics regulatory status I use as a daily reference.</p>
+    <form class="capture-form" id="captureForm" onsubmit="handleCapture(event)">
+      <input type="text" name="name" placeholder="Your name" autocomplete="name" />
+      <input type="email" name="email" placeholder="Your email address" required autocomplete="email" />
+      <button type="submit" class="btn">Send It →</button>
+    </form>
+    <div class="success-msg" id="captureSuccess">✓ &nbsp;You're on the list — check your inbox shortly.</div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>© 2026 RN Collins LLC · All rights reserved · <a href="https://rncollins.com">rncollins.com</a></p>
+</footer>
+
+<!-- ── FIXED CONTACT FAB ── -->
+<button class="contact-fab" onclick="openContactModal()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+  Contact the Architect
+</button>
+
+<!-- ── ENROLL MODAL ── -->
+<div class="modal-overlay" id="enrollModal" onclick="handleOverlayClick(event, 'enrollModal')">
+  <div class="modal">
+    <button class="modal__close" onclick="closeModal('enrollModal')">✕</button>
+    <div id="enrollForm">
+      <p class="modal__eyebrow">REGAC — Reserve Your Seat</p>
+      <h2>Join the Founding Cohort</h2>
+      <p class="modal__sub">Complete your reservation below. You'll be redirected to payment after your seat is confirmed.</p>
+      <div class="modal__urgency">⚑ Cohort capped at 20 — founding rate locks in at checkout</div>
+      <form onsubmit="handleEnroll(event)">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="enrollName" placeholder="Your full name" autocomplete="name" required />
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="enrollEmail" placeholder="your@email.com" autocomplete="email" required />
+        </div>
+        <div class="modal__error" id="enrollError"></div>
+        <button type="submit" class="btn btn--primary" id="enrollSubmitBtn">Reserve My Seat →</button>
+      </form>
+    </div>
+    <div class="modal__success" id="enrollSuccess">
+      <div class="modal__success__icon">✓</div>
+      <h3>Seat reserved!</h3>
+      <p>Redirecting you to complete your enrollment…</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONTACT MODAL ── -->
+<div class="modal-overlay" id="contactModal" onclick="handleOverlayClick(event, 'contactModal')">
+  <div class="modal">
+    <button class="modal__close" onclick="closeModal('contactModal')">✕</button>
+    <div id="contactForm">
+      <p class="modal__eyebrow">Direct line</p>
+      <h2>Contact the Architect</h2>
+      <p class="modal__sub">Send a message directly. Questions about the curriculum, firm licensing, or custom arrangements welcome.</p>
+      <form onsubmit="handleContact(event)">
+        <div class="form-group">
+          <label>Name <span>(optional)</span></label>
+          <input type="text" id="contactName" placeholder="Your name" autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="contactEmail" placeholder="your@email.com" autocomplete="email" required />
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea id="contactMessage" placeholder="What's on your mind?" required></textarea>
+        </div>
+        <div class="modal__error" id="contactError"></div>
+        <button type="submit" class="btn btn--gold" id="contactSubmitBtn">Send Message →</button>
+      </form>
+    </div>
+    <div class="modal__success" id="contactSuccess">
+      <div class="modal__success__icon">✓</div>
+      <h3>Message sent</h3>
+      <p>Thank you — you'll hear back within 1–2 business days.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── UTM Capture ──
+  (function captureUTM() {
+    const params = new URLSearchParams(window.location.search);
+    const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+    utmKeys.forEach(key => {
+      if (params.has(key)) {
+        sessionStorage.setItem(key, params.get(key));
+      }
+    });
+  })();
+
+  function getUTMData() {
+    const keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+    const data = {};
+    keys.forEach(k => {
+      const v = sessionStorage.getItem(k);
+      if (v) data[k] = v;
+    });
+    return data;
+  }
+
+  // ── Modal helpers ──
+  function openEnrollModal() {
+    document.getElementById('enrollModal').classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function openContactModal() {
+    document.getElementById('contactModal').classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+  function handleOverlayClick(e, id) {
+    if (e.target === document.getElementById(id)) closeModal(id);
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      closeModal('enrollModal');
+      closeModal('contactModal');
+    }
+  });
+
+  // ── API helper ──
+  async function postLead(payload) {
+    const utm = getUTMData();
+    const body = Object.assign({}, payload, utm);
+    const res = await fetch('https://nsag-api.vercel.app/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    if (!res.ok) {
+      let msg = 'Something went wrong. Please try again.';
+      try { const d = await res.json(); if (d.message) msg = d.message; } catch(e) {}
+      throw new Error(msg);
+    }
+    return res.json();
+  }
+
+  function setLoading(btnId, loading) {
+    const btn = document.getElementById(btnId);
+    if (!btn) return;
+    btn.disabled = loading;
+    btn.textContent = loading ? 'Sending…' : btn.dataset.orig || btn.textContent;
+    if (!loading && btn.dataset.orig) btn.textContent = btn.dataset.orig;
+  }
+
+  // ── Enroll form ──
+  async function handleEnroll(e) {
+    e.preventDefault();
+    const name = document.getElementById('enrollName').value.trim();
+    const email = document.getElementById('enrollEmail').value.trim();
+    const errEl = document.getElementById('enrollError');
+    const btn = document.getElementById('enrollSubmitBtn');
+    errEl.style.display = 'none';
+    if (!btn.dataset.orig) btn.dataset.orig = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Reserving seat…';
+    try {
+      await postLead({ name, email, source: 'enroll-regac' });
+      document.getElementById('enrollForm').style.display = 'none';
+      document.getElementById('enrollSuccess').style.display = 'block';
+      setTimeout(() => {
+        window.location.href = 'https://gumroad.com';
+      }, 1500);
+    } catch (err) {
+      errEl.textContent = err.message;
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = btn.dataset.orig;
+    }
+  }
+
+  // ── Contact form ──
+  async function handleContact(e) {
+    e.preventDefault();
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+    const errEl = document.getElementById('contactError');
+    const btn = document.getElementById('contactSubmitBtn');
+    errEl.style.display = 'none';
+    if (!btn.dataset.orig) btn.dataset.orig = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      await postLead({ name, email, message, source: 'contact-architect-regac' });
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('contactSuccess').style.display = 'block';
+    } catch (err) {
+      errEl.textContent = err.message;
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = btn.dataset.orig;
+    }
+  }
+
+  // ── Email capture form ──
+  async function handleCapture(e) {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const successEl = document.getElementById('captureSuccess');
+    const btn = form.querySelector('button[type="submit"]');
+    if (!btn.dataset.orig) btn.dataset.orig = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      await postLead({ name, email, source: 'regac-site' });
+      form.style.display = 'none';
+      successEl.style.display = 'block';
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = btn.dataset.orig;
+      alert('Could not submit — please try again or email us directly.');
+    }
+  }
+</script>
+</body>
+</html>
