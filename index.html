@@ -1058,7 +1058,7 @@
     <div class="modal__success" id="enrollSuccess">
       <div class="modal__success__icon">✓</div>
       <h3>Seat reserved!</h3>
-      <p>Redirecting you to complete your enrollment…</p>
+      <p>We'll follow up by email with next steps to complete your enrollment.</p>
     </div>
   </div>
 </div>
@@ -1181,9 +1181,6 @@
       await postLead({ name, email, source: 'enroll-regac' });
       document.getElementById('enrollForm').style.display = 'none';
       document.getElementById('enrollSuccess').style.display = 'block';
-      setTimeout(() => {
-        window.location.href = 'https://gumroad.com';
-      }, 1500);
     } catch (err) {
       errEl.textContent = err.message;
       errEl.style.display = 'block';
